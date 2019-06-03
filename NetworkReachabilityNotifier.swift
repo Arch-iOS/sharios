@@ -6,12 +6,12 @@ extension Notification {
     static let reachableViaWWan = Notification(name: Notification.Name(rawValue: "reachableViaWWan"))
 }
 
-protocol NetworkReachabilityManager {
+protocol NetworkReachabilityNotifier {
     func applicationDidBecomeActive()
     func applicationWillResignActive()
 }
 
-public class NetworkReachabilityManagerImpl: NetworkReachabilityManager {
+public class NetworkReachabilityNotifierImpl: NetworkReachabilityNotifier {
 
     private let reachability = Reachability()!
 
